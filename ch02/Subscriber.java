@@ -22,12 +22,11 @@ public class Subscriber implements Flow.Subscriber<Integer> {
     private Flow.Subscription clientSubscription;
 
 
-    public Subscriber(Long timeOutOfHomeOrSleeping, String clientSubscriberName, int nextOrderIDItemExpected, int totalItems, Flow.Subscription clientSubscription) {
+    public Subscriber(Long timeOutOfHomeOrSleeping, String clientSubscriberName) {
         this.timeOutOfHomeOrSleeping = timeOutOfHomeOrSleeping;
         this.clientSubscriberName = clientSubscriberName;
-        this.nextOrderIDItemExpected = nextOrderIDItemExpected;
-        this.totalItems = totalItems;
-        this.clientSubscription = clientSubscription;
+        this.nextOrderIDItemExpected = 1;
+        this.totalItems = 0;
     }
 
 
