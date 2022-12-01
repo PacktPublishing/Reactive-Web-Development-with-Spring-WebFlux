@@ -41,7 +41,7 @@ public class Subscriber implements Flow.Subscriber<Integer> {
         if (itemNumber != nextOrderIDItemExpected) {
             IntStream.range(nextOrderIDItemExpected, itemNumber).forEach(
                     (orderItemNumber) ->
-                            System.out.println("customer ended up leaving the case and missed the delivery " + orderItemNumber)
+                            System.out.println("customer ended up leaving the house and missed the delivery " + orderItemNumber)
             );
             nextOrderIDItemExpected = itemNumber;
         }
