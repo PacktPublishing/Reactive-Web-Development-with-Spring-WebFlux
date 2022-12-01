@@ -88,7 +88,7 @@ public class Publisher {
         orderPublisher.subscribe(client10);
 
 
-        System.out.println("Sending the items already produced by the store: " + maxItems + "you have seconds " + MAX_SECONDS_TO_PICK_UP + " to receive them");
+        System.out.println("Sending the items already produced by the store: " + maxItems + "you have  " + MAX_SECONDS_TO_PICK_UP + "seconds to receive them");
         IntStream.rangeClosed(1, 100).forEach((number) -> {
             System.out.println("delivering the item " + number + " to customer");
             final int deliverLag = orderPublisher.offer(
@@ -98,7 +98,7 @@ public class Publisher {
                     (customer, response) -> {
                         customer.onError(
                                 new RuntimeException("The " + ((Subscriber) customer)
-                                        .clientSubscriberName() + "Unable to receive in the desired time" + response));
+                                        .clientSubscriberName() + "unable to receive in the desired time" + response));
                         return false;
                     });
             if (deliverLag < 0) {
