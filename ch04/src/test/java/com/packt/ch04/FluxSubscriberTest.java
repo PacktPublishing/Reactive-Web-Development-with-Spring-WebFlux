@@ -42,7 +42,7 @@ public class FluxSubscriberTest {
         Flux<Integer> flux = Flux.range(1, 50)
                 .log()
                 // limit the rate of the incoming or outgoing messages through our reactive channel
-                // we can control te number of messages by sending specific demand request to the upstream. In this case, we request only 5.
+                // we can control the number of messages by sending specific demand request to the upstream. In this case, we request only 5.
                 .limitRate(5);
 
         flux.subscribe();
